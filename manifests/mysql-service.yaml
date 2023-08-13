@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: e-mysql
+  name: mysql-group5
   labels:
     app: mysql
 spec:
@@ -9,5 +9,5 @@ spec:
   - port: 3306
     targetPort: 3306
   selector:
-    app: mysql
+    app: mysql-group5
   type: ClusterIP

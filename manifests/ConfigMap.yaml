@@ -4,11 +4,12 @@ metadata:
   name: webapp-config
 data:
   IMAGE_URL: "/image_url"
-  DBHOST: "e-mysql"
+  DBHOST: "mysql-group5"
   DBPORT: "3306"
-  GROUP_NAME: "GROUP10"
-  IMAGE_S3: "https://clo835group10.s3.amazonaws.com/"
-  image : |
-    {
-      "backgroundimg1" : "https://clo835group10.s3.amazonaws.com/background.jpg"
-    }
+  GROUP_NAME: "GROUP5"
+  IMAGE_S3: "https://clo835group5.s3.amazonaws.com/"
+  image: "https://clo835group5.s3.amazonaws.com/background.jpg"
+  #image : |
+  #  {
+  #     https://clo835group5.s3.amazonaws.com/background.jpg"
+  #  }

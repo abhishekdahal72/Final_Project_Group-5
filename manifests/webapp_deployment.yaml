@@ -5,7 +5,7 @@ metadata:
   labels: 
     app: employees
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: employees
@@ -17,7 +17,7 @@ spec:
       serviceAccountName: clo835
       containers:
         - name: e-webapp
-          image: 360201675659.dkr.ecr.us-east-1.amazonaws.com/finalproject-webapp:v2.0
+          image: 899672848368.dkr.ecr.us-east-1.amazonaws.com/flask_app:G5.3
           ports: 
             - containerPort: 81
               protocol: TCP
@@ -35,7 +35,7 @@ spec:
             - name: DBUSER
               value: root
             - name: DBPWD 
-              value: db123
+              value: clo835
             - name: GROUP_NAME
               valueFrom:
                 configMapKeyRef:
