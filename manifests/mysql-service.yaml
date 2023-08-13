@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: e-mysql
   labels:
-    app: mysql
+    app: mysql-group5
 spec:
   ports:
   - port: 3306
