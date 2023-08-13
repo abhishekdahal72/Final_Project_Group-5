@@ -1,32 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: e-mysql
-  labels:
-    app: mysql
+  name: mysql-group5   # Updated name
 spec:
   replicas: 1 
   selector:
     matchLabels:
-      app: mysql
+      app: mysql-group5
   template:
     metadata:
       labels:
-        app: mysql
+        app: mysql-group5
     spec:
       containers:
-      - image: '387584877503.dkr.ecr.us-east-1.amazonaws.com/finalproject-mysql'
-        name: mysql
+      - name: mysql
+        image: 899672848368.dkr.ecr.us-east-1.amazonaws.com/flask_db:G5.1
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: db123
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secrets
+              key: password
         ports:
         - containerPort: 3306
-          protocol: TCP
-        volumeMounts:
-        - name: mysql-database
-          mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-database
-        persistentVolumeClaim: 
-          claimName: mysql-pvc
+       
